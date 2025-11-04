@@ -9,13 +9,4 @@ python -m robot booking_tests
 
 robot booking_tests/
 
-robot booking_tests/
-
 robot admin/Edit.robot
-
-#Return To Homepage
-
-#Wait Until Page Does Not Contain    อัปเดตข้อมูลสำเร็จ!    20s
-
-Continue To Caddy Selection
-    Select Caddies
