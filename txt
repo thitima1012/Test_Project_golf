@@ -1,0 +1,61 @@
+
+${VALID USER}     demo
+${VALID PASSWORD}    mode
+${LOGIN URL}      localhost:5173${SERVER}/booking
+
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+
+Login Page Should Be Open
+    Title Should Be    Login Page
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+    Login Page Should Be Open
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    username_field    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    password_field    ${password}
+
+Submit Credentials
+    Click Button    login_button
+
+Welcome Page Should Be Open
+    Location Should Be    ${WELCOME URL}
+    Title Should Be    Welcome Page
+
+    Select Addons
+    # 8. เลือกบริการเสริม (กระเป๋ากอล์ฟ และ รถกอล์ฟ)
+    #Click Button    xpath:(//button[text()='+'])[3] # เพิ่ม กระเป๋ากอล์ฟ 1 ใบ
+    #Click Button    xpath:(//button[text()='+'])[4] # เพิ่ม รถกอล์ฟ 1 คัน
+    # 9. เปิดตัวเลือกแคดดี้ (ใช้ ID ที่คุณระบุ)
+    #Click Element       id:caddy-selection-toggle
+
+
+thiti@gmail.com
+Thiti003
+
+stripe login
+stripe listen --forward-to localhost:5000/api/stripe/webhook
+
+python -m robot booking_tests
+
+robot booking_tests/f_register_booking.robot 
+
+robot booking_tests/TC-4001_register_booking.robot   TC-4002_login_booking.robot
+
+robot admin/Edit.robot
+
+#Return To Homepage
+
+#Wait Until Page Does Not Contain    อัปเดตข้อมูลสำเร็จ!    20s
+
+Continue To Caddy Selection
+    Select Caddies

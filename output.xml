@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-11-04T14:36:19.998622" rpa="false" schemaversion="5">
+<suite id="s1" name="Valid Login Booking" source="D:\5\Test Golf\booking_tests\valid_login_booking.robot">
+<test id="s1-t1" name="Tc4002" line="9">
+<kw name="Open Browser And Login" owner="TC-4002_login_booking">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:20.179670" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:5173'.</msg>
+<msg time="2025-11-04T14:36:20.260534" level="WARN">The chromedriver version (141.0.7390.54) detected in PATH at chromedriver.EXE might not be compatible with the detected chrome version (142.0.7444.60); currently, chromedriver 142.0.7444.59 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>http://${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-04T14:36:20.179430" elapsed="1.447631"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-04T14:36:21.627496" elapsed="0.000807"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-04T14:36:21.628641" elapsed="0.253338"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[text()='Join Us']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:21.882128" elapsed="0.067993"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:21.951882" level="INFO">Clicking element 'xpath://a[text()='Join Us']'.</msg>
+<arg>xpath://a[text()='Join Us']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:21.950726" elapsed="0.068343"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[text()='เข้าสู่ระบบ']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.019367" elapsed="0.028312"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:22.047984" level="INFO">Clicking element 'xpath://a[contains(text(), 'เข้าสู่ระบบ')]'.</msg>
+<arg>xpath://a[contains(text(), 'เข้าสู่ระบบ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.047826" elapsed="0.050197"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>เข้าสู่ระบบผู้ใช้ทั่วไป</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.098444" elapsed="0.035399"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.133995" elapsed="0.019503"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:22.153851" level="INFO">Typing text 'thiti033@gmail.com' into text field 'id:email'.</msg>
+<arg>id:email</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.153652" elapsed="0.099703"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:22.253819" level="INFO">Typing text 'Thiti0033' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${VALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.253510" elapsed="0.070937"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:22.324969" level="INFO">Clicking button 'xpath://button[contains(text(),'เข้าสู่ระบบ')]'.</msg>
+<arg>xpath://button[contains(text(),'เข้าสู่ระบบ')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.324698" elapsed="0.064609"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://button[text()='Book Now']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-04T14:36:22.389556" elapsed="1.656878"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:20.178825" elapsed="3.867717"/>
+</kw>
+<kw name="Start Booking Flow" owner="TC-4002_login_booking">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:24.047211" level="INFO">Clicking button 'xpath://button[text()='Book Now']'.</msg>
+<arg>xpath://button[text()='Book Now']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.047068" elapsed="0.049379"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:24.046820" elapsed="0.049842"/>
+</kw>
+<kw name="Select Date And Holes" owner="TC-4002_login_booking">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://input[@name='date']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.097863" elapsed="0.049382"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:24.147568" level="INFO">Typing text '04-11-2025' into text field 'xpath://input[@name='date']'.</msg>
+<arg>xpath://input[@name='date']</arg>
+<arg>04-11-2025</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.147396" elapsed="0.077734"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:24.225794" level="INFO">Clicking button 'xpath:(//button[normalize-space(text())='จองต่อ'])'.</msg>
+<arg>xpath:(//button[normalize-space(text())='จองต่อ'])</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.225510" elapsed="0.063572"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:24.097208" elapsed="0.191980"/>
+</kw>
+<kw name="Select Time And Continue" owner="TC-4002_login_booking">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:24.289945" level="INFO">Clicking button 'xpath://button[normalize-space(text())='07:30']'.</msg>
+<arg>xpath://button[normalize-space(text())='07:30']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.289792" elapsed="0.052614"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:24.342798" level="INFO">Clicking button 'xpath:(//button[normalize-space(text())='จองต่อ'])'.</msg>
+<arg>xpath:(//button[normalize-space(text())='จองต่อ'])</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.342586" elapsed="0.051256"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:24.289504" elapsed="0.104515"/>
+</kw>
+<kw name="Specify Golfers And GroupName" owner="TC-4002_login_booking">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:groupName</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:24.394622" elapsed="5.354859"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:29.749850" level="INFO">Typing text 'Tiger's Team' into text field 'name:groupName'.</msg>
+<arg>name:groupName</arg>
+<arg>${GROUP_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.749643" elapsed="0.078352"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:29.828643" level="INFO">Clicking button 'xpath://button[text()='จองต่อ']'.</msg>
+<arg>xpath://button[text()='จองต่อ']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.828387" elapsed="0.063455"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:24.394372" elapsed="5.497571"/>
+</kw>
+<kw name="Continue To Caddy Selection" owner="TC-4002_login_booking">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ต้องการเลือกแคดดี้</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.892479" elapsed="0.008767"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:29.901586" level="INFO">Clicking element 'id:caddy-selection-toggle'.</msg>
+<arg>id:caddy-selection-toggle</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.901412" elapsed="0.049574"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:29.892195" elapsed="0.058887"/>
+</kw>
+<kw name="Select Caddies" owner="TC-4002_login_booking">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:caddy-selection-toggle</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.951614" elapsed="0.016554"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-04T14:36:30.968861" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-04T14:36:29.968358" elapsed="1.000595"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath://p[contains(text(), 'C28')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-11-04T14:36:30.969086" elapsed="0.016010"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-04T14:36:30.985502" level="INFO">${CADDY_LOCATOR} = xpath://p[contains(text(), 'C28')]</msg>
+<var>${CADDY_LOCATOR}</var>
+<arg>xpath://p[contains(text(), 'C28')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-04T14:36:30.985289" elapsed="0.000252"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:30.985895" level="INFO">Clicking element 'xpath://p[contains(text(), 'C28')]'.</msg>
+<arg>${CADDY_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:30.985679" elapsed="0.058152"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:29.951349" elapsed="1.092574"/>
+</kw>
+<kw name="Verify Details And Confirm" owner="TC-4002_login_booking">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath://button[normalize-space(text())='ยืนยันการจอง']</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-11-04T14:36:31.044486" elapsed="0.021581"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:31.066520" level="INFO">Clicking button 'xpath://button[normalize-space(text())='ยืนยันการจอง']'.</msg>
+<arg>xpath://button[normalize-space(text())='ยืนยันการจอง']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:31.066278" elapsed="0.095980"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:31.162575" level="INFO">Clicking button 'xpath://button[normalize-space(text())='ดำเนินการชำระเงิน']'.</msg>
+<arg>xpath://button[normalize-space(text())='ดำเนินการชำระเงิน']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:31.162402" elapsed="0.049237"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout.stripe.com</arg>
+<arg>40s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-11-04T14:36:31.211782" elapsed="1.954992"/>
+</kw>
+<doc>ยืนยันรายละเอียดการจองและกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2025-11-04T14:36:31.044188" elapsed="2.122689"/>
+</kw>
+<kw name="Proceed To Card Payment" owner="TC-4002_login_booking">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:33.168677" level="INFO">Typing text 'thiti033@gmail.com' into text field 'xpath://input[@name='email']'.</msg>
+<arg>xpath://input[@name='email']</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.168353" elapsed="0.311156"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:cardNumber</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.479686" elapsed="0.024150"/>
+</kw>
+<doc>จัดการกับหน้า Stripe Checkout: คลิก Header เพื่อเปิดฟอร์ม, Select Frame และรอ Element</doc>
+<status status="PASS" start="2025-11-04T14:36:33.167475" elapsed="0.336480"/>
+</kw>
+<kw name="Complete Stripe Payment" owner="TC-4002_login_booking">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:cardNumber</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.505015" elapsed="0.012603"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:33.518138" level="INFO">Typing text '4242 4242 4242 4242' into text field 'id:cardNumber'.</msg>
+<arg>id:cardNumber</arg>
+<arg>4242 4242 4242 4242</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.517859" elapsed="0.321412"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:cardExpiry</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.839554" elapsed="0.036704"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:33.876581" level="INFO">Typing text '12 / 29' into text field 'id:cardExpiry'.</msg>
+<arg>id:cardExpiry</arg>
+<arg>12 / 29</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:33.876409" elapsed="0.152796"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:cardCvc</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.029473" elapsed="0.015476"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:34.045432" level="INFO">Typing text '123' into text field 'id:cardCvc'.</msg>
+<arg>id:cardCvc</arg>
+<arg>123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.045180" elapsed="0.092579"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:billingName</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.138017" elapsed="0.014267"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:34.152628" level="INFO">Typing text 'TEST USER' into text field 'id:billingName'.</msg>
+<arg>id:billingName</arg>
+<arg>TEST USER</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.152458" elapsed="0.138974"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-04T14:36:34.292105" level="INFO">${PAY_BUTTON_LOCATOR} = xpath://span[text()='Pay']/ancestor::button[1]</msg>
+<var>${PAY_BUTTON_LOCATOR}</var>
+<arg>xpath://span[text()='Pay']/ancestor::button[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.291839" elapsed="0.000304"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${PAY_BUTTON_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.292278" elapsed="0.024865"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-04T14:36:34.317639" level="INFO">Clicking element 'xpath://span[text()='Pay']/ancestor::button[1]'.</msg>
+<arg>${PAY_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.317355" elapsed="0.075694"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชำระเงินสำเร็จ</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-04T14:36:34.393275" elapsed="4.464783"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-04T14:36:38.858195" elapsed="2.169345"/>
+</kw>
+<doc>กรอกข้อมูลบัตรทดสอบ Stripe และข้อมูลที่จำเป็นอื่นๆ แล้วกด Pay</doc>
+<status status="PASS" start="2025-11-04T14:36:33.504529" elapsed="7.523108"/>
+</kw>
+<status status="PASS" start="2025-11-04T14:36:20.178190" elapsed="20.849823"/>
+</test>
+<doc>A test suite with a single test for valid booking.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" start="2025-11-04T14:36:19.999993" elapsed="21.029149"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Valid Login Booking" id="s1" pass="1" fail="0" skip="0">Valid Login Booking</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-04T14:36:20.260534" level="WARN">The chromedriver version (141.0.7390.54) detected in PATH at chromedriver.EXE might not be compatible with the detected chrome version (142.0.7444.60); currently, chromedriver 142.0.7444.59 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
