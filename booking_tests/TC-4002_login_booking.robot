@@ -49,16 +49,15 @@ Start Booking Flow
 
 Select Date And Holes
     Wait Until Element Is Visible    xpath://input[@name='date']    10s
-    Input Text                       xpath://input[@name='date']    04-11-2025
-
-    #Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])
+    #Input Text                       xpath://input[@name='date']    2025-11-27
+    Execute JavaScript    document.querySelector('input[name="date"]').value='2025-12-12'
 
 Select Time And Continue
-    # 4. เลือกเวลา 
-    Click Button                     xpath://button[normalize-space(text())='07:30']
-    
-    # 5. กดปุ่ม 'จองต่อ' ปุ่มแรก 
-    Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])    
+    Wait Until Element Is Enabled    xpath://button[normalize-space(text())='07:45']    10s
+    Click Button                     xpath://button[normalize-space(text())='07:45']
+
+    Wait Until Element Is Enabled    xpath:(//button[normalize-space(text())='จองต่อ'])    10s
+    Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])
 
 
 # ----------------- Main Flow: ขั้นตอนที่ 2 (จำนวน, กลุ่ม, บริการเสริม) -----------------
@@ -73,18 +72,18 @@ Specify Golfers And GroupName
 
 Continue To Caddy Selection
     # 8. กดปุ่ม 'จองต่อ' ปุ่มที่สอง (จากหน้า Add-ons)
-    Wait Until Page Contains          ต้องการเลือกแคดดี้
+    Wait Until Page Contains          ต้องการเลือกแคดดี้        10s
     Click Element    id:caddy-selection-toggle
 
 # ----------------- Main Flow: ขั้นตอนที่ 3 (เลือกแคดดี้) -----------------
 Select Caddies
     # 1. คลิกที่ Checkbox โดยใช้ JavaScript 
-    Wait Until Element Is Enabled    id:caddy-selection-toggle
+    Wait Until Element Is Enabled    id:caddy-selection-toggle        
     Sleep                            1s 
     
     # 2. รอจนกว่า Caddy4 จะคลิกได้ โดยใช้ XPath  
-    Wait Until Element Is Enabled        xpath://p[contains(text(), 'C28')]  10s
-    ${CADDY_LOCATOR}=    Set Variable    xpath://p[contains(text(), 'C28')]
+    Wait Until Element Is Enabled        xpath://p[contains(text(), 'CO1')]  10s
+    ${CADDY_LOCATOR}=    Set Variable    xpath://p[contains(text(), 'CO1')]
     Click Element        ${CADDY_LOCATOR}
 
 Verify Details And Confirm
@@ -99,7 +98,7 @@ Verify Details And Confirm
     #Wait Until Page Contains     สรุปและตรวจสอบ     timeout=10s
     Click Button                     xpath://button[normalize-space(text())='ดำเนินการชำระเงิน']
     
-    Wait Until Location Contains       checkout.stripe.com        40s
+    Wait Until Location Contains       checkout.stripe.com        60s
 
 # ----------------- Main Flow: ขั้นตอนที่ 4 (การชำระเงิน) -----------------
 Proceed To Card Payment

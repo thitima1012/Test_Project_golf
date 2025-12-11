@@ -9,11 +9,11 @@ ${SERVER}           localhost:5173
 ${BROWSER}          Chrome
 ${DELAY}            0
 ${GROUP_NAME}       Tiger 
-${VALID_USER}       thiti033@gmail.com 
-${VALID_PASS}       Thiti0033 
-${USER_NAME}        Thiti Ma
+${VALID_USER}       thitima033@gmail.com 
+${VALID_PASS}       Thitima0033 
+${USER_NAME}        Thitima
 ${USER_PHONE}       0812345678
-${BOOKING_TIME}    07:15
+
 
 
 *** Keywords ***
@@ -73,21 +73,16 @@ Start Booking Flow
     Click Button                    xpath://button[text()='Book Now']
 
 Select Date And Holes
-    # 2. เลือกวันที่: ใช้ชื่อ (name) 'date' เพื่อป้อนค่า
     Wait Until Element Is Visible    xpath://input[@name='date']    10s
-    Input Text                       xpath://input[@name='date']    04-11-2025
-
-    #Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])
-     
-    # 3. เลือก 18 หลุม: ใช้ XPath อ้างอิงจากข้อความ
-    #Click Button                    xpath://button[text()='9 หลุม']
+    Execute JavaScript    var dateInput = document.querySelector('input[name="date"]'); dateInput.value='2025-12-11'; dateInput.dispatchEvent(new Event('input')); dateInput.dispatchEvent(new Event('change'));
 
 Select Time And Continue
-    
-    Click Button                     xpath://button[normalize-space(text())='07:45']
-    
-    # 5. กดปุ่ม 'จองต่อ' ปุ่มแรก 
-    Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])    
+    Wait Until Element Is Enabled    xpath://button[normalize-space(text())='07:30']    10s
+    Click Button                     xpath://button[normalize-space(text())='07:30']
+
+    Wait Until Element Is Enabled    xpath:(//button[normalize-space(text())='จองต่อ'])    10s
+    Click Button                     xpath:(//button[normalize-space(text())='จองต่อ'])
+     
 
 # ----------------- Main Flow: ขั้นตอนที่ 2 (จำนวน, กลุ่ม, บริการเสริม) ----------------- 
 Specify Golfers And GroupName 
@@ -171,21 +166,3 @@ Complete Stripe Payment
     Wait Until Page Contains        ชำระเงินสำเร็จ    20s 
 
     Close Browser
-
-#Return To Homepage
-    #[Documentation]    คลิกปุ่ม 'กลับหน้าหลัก' เพื่อสิ้นสุดกระบวนการจอง
-
-    # 1. รอจนกว่าปุ่ม 'กลับหน้าหลัก' จะคลิกได้
-    #Wait Until Element Is Enabled       xpath://button[text()='กลับหน้าหลัก']
-
-    # 2. กดปุ่ม 'กลับหน้าหลัก'
-    #Click Element                       xpath://button[text()='กลับหน้าหลัก']
-
-    # 3. ให้เวลาเบราว์เซอร์นำทางกลับไปหน้าหลัก 
-    #Sleep                   3s  # ให้เวลาระบบประมวลผลการนำทาง
-
-    # 4. ยืนยันว่าหน้าหลักโหลดแล้ว (ตัวอย่าง: ตรวจสอบข้อความ "Welcome" หรือ "Book Now")
-    #Wait Until Page Contains         Welcome, Thiti Ma       timeout=10s
-
-    # 5. ปิดเบราว์เซอร์
-    #Close Browser
